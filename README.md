@@ -51,6 +51,8 @@ All colors are defined at the top of `css/styles.css` (`--fig-leaf`, `--sage`, `
 2. Create a new form and copy its ID (the part after `/f/`).
 3. In `contact.html`, replace `YOUR_FORM_ID` in `action="https://formspree.io/f/YOUR_FORM_ID"`.
 
+Until a form ID is added, pressing **Send message** opens the visitor's email app with a message to elisa@renewcounselingpa.com already filled in, so the form still works before Formspree is set up.
+
 The free plan includes 50 submissions a month and spam filtering. **Note:** Formspree is not HIPAA-compliant, so the form asks visitors not to include detailed health information.
 
 ## Google Map

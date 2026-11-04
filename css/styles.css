@@ -906,3 +906,19 @@ h1, h2, h3, .price, .quote { font-variant-numeric: lining-nums; }
 /* Keep Elisa's face in frame when a portrait is cropped (arch, circle) */
 .portrait, .mini-profile img { object-position: center 30%; }
 a[href^="mailto:"] { overflow-wrap: anywhere; }
+
+/* Hidden phone bar: also remove it from keyboard/screen-reader focus once it has slid away */
+@media (max-width: 860px) {
+  .mobile-bar { transition: transform 0.25s ease, visibility 0s linear 0s; }
+  body.bar-hidden .mobile-bar,
+  body.menu-open .mobile-bar { visibility: hidden; transition: transform 0.25s ease, visibility 0s linear 0.25s; }
+}
+
+/* Without JavaScript, show the phone menu open so every page is still reachable */
+@media (max-width: 1000px) {
+  .no-js .nav-toggle { display: none; }
+  .no-js .header-inner { flex-wrap: wrap; }
+  .no-js .site-nav { display: block; position: static; width: 100%; border: 0; max-height: none; }
+  .no-js .site-nav ul { padding: 0 0 16px; }
+}
+@media (max-width: 1000px) { .no-js .site-header { position: relative; } }

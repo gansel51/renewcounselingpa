@@ -49,6 +49,8 @@ document.querySelectorAll('[data-year]').forEach((el) => {
 // Contact form: validate, then submit to Formspree without leaving the page
 const form = document.querySelector('[data-contact-form]');
 if (form) {
+  // JavaScript handles validation messages; without it, the browser's built-in checks still apply
+  form.noValidate = true;
   const status = form.querySelector('.form-status');
   const button = form.querySelector('button[type="submit"]');
 
@@ -86,9 +88,20 @@ if (form) {
       return;
     }
 
+    // Until a Formspree form ID is added, open the visitor's email app with the message filled in
     if (form.action.includes('YOUR_FORM_ID')) {
-      status.classList.add('error');
-      status.textContent = 'This form is not connected yet. Add a Formspree form ID in contact.html.';
+      const v = (name) => (form.elements[name] ? form.elements[name].value.trim() : '');
+      const subject = `Consultation request from ${v('first_name')} ${v('last_name')}`;
+      const body = [
+        `Name: ${v('first_name')} ${v('last_name')}`,
+        `Email: ${v('email')}`,
+        `Phone: ${v('phone') || '(not given)'}`,
+        '',
+        v('message'),
+      ].join('\n');
+      window.location.href = `mailto:elisa@renewcounselingpa.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      status.classList.add('success');
+      status.textContent = 'Your email app should open with your message ready to send. If it doesn\'t, email elisa@renewcounselingpa.com or call (570) 734-7798.';
       return;
     }
 
