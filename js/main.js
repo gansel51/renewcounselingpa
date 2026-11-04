@@ -4,18 +4,41 @@ const nav = document.getElementById('site-nav');
 if (toggle && nav) {
   toggle.addEventListener('click', () => {
     const open = nav.classList.toggle('open');
+    document.body.classList.toggle('menu-open', open);
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   });
   const close = () => {
     nav.classList.remove('open');
+    document.body.classList.remove('menu-open');
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', 'Open menu');
   };
   nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', close));
+  // Close when tapping outside the menu
+  document.addEventListener('click', (e) => {
+    if (nav.classList.contains('open') && !nav.contains(e.target) && !toggle.contains(e.target)) close();
+  });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && nav.classList.contains('open')) { close(); toggle.focus(); }
   });
+}
+
+// Phone Call/Book bar: tuck it away while a page's own booking button or
+// the contact form is on screen, and while someone is typing (keyboard open).
+const bar = document.querySelector('.mobile-bar');
+if (bar && 'IntersectionObserver' in window) {
+  const visible = new Set();
+  const update = () => document.body.classList.toggle('bar-hidden', visible.size > 0);
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => (en.isIntersecting ? visible.add(en.target) : visible.delete(en.target)));
+    update();
+  });
+  document.querySelectorAll('.hero-actions, #contact-form').forEach((el) => io.observe(el));
+  document.addEventListener('focusin', (e) => {
+    if (e.target.matches('input, textarea')) { visible.add('typing'); update(); }
+  });
+  document.addEventListener('focusout', () => { visible.delete('typing'); update(); });
 }
 
 // Footer year
