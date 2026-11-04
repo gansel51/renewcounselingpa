@@ -27,8 +27,7 @@ Replace the files in `images/` with real photos **using the same filenames**, an
 | File | Where it's used | Suggested shape |
 |---|---|---|
 | `hero-forest.jpg` | Home, top banner | Wide, 1920×1100+ |
-| `headshot.jpg` | Home intro (arched frame) and Contact form (small circle) | Portrait, 4:5 |
-| `headshot-2.jpg` | About page (top) | Portrait, 4:5 |
+| `elisa-yost.jpg` | Home intro (arched frame), About page (top) and Contact form (small circle) | Portrait, 4:5. The current file is 320×400; a larger original (at least 1000×1250) would look sharper |
 | `headshot-3.jpg` | About page, "My approach" (Elisa in her office) | 4:3 |
 | `office-plants.jpg` | Home, "Three simple steps" | 4:3 |
 | `therapy-1.jpg` … `therapy-4.jpg` | Therapies page | Square |
