@@ -24,10 +24,10 @@ Replace the files in `images/` with real photos **using the same filenames**, an
 | File | Where it's used | Suggested shape |
 |---|---|---|
 | `hero-forest.jpg` | Home, top banner | Wide, 1920×1100+ |
-| `headshot.jpg` | Home intro (arched frame) | Portrait, 4:5 |
-| `headshot-2.jpg` | About page | Portrait, 4:5 |
-| `office-plants.jpg` | Home, "What to expect" | 4:3 |
-| `about-nature.jpg` | About, "My approach" | 4:3 |
+| `headshot.jpg` | Home intro (arched frame) and Contact form (small circle) | Portrait, 4:5 |
+| `headshot-2.jpg` | About page (top) | Portrait, 4:5 |
+| `headshot-3.jpg` | About page, "My approach" (Leah in her office) | 4:3 |
+| `office-plants.jpg` | Home, "Three simple steps" | 4:3 |
 | `therapy-1.jpg` … `therapy-4.jpg` | Therapies page | Square |
 | `banner-ferns.jpg`, `banner-canopy.jpg`, `banner-path.jpg` | Banners on the Therapies, About and Contact pages | Wide |
 | `cta-leaves.jpg` | "Get in touch" bands | Wide |
