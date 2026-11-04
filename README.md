@@ -12,7 +12,7 @@ A static website (plain HTML, CSS and a little JavaScript) for Renew Counseling.
 | `fees.html` | Fees & Insurance (rates, insurance, payment, cancellation policy, Good Faith Estimate notice) |
 | `contact.html` | Hours, location, office details (parking, accessibility), map and contact form |
 
-The header, footer and phone-only Call/Book bar are repeated in each page, so an address or phone number change needs to be made in all five files. Search for `[Street Address]`, `(000) 000-0000` and so on.
+The header, footer and phone-only Call/Book bar are repeated in each page, so an address or phone number change needs to be made in all five files. Search for `102 Wheatfield`, `(570) 734-7798` and so on.
 
 ## Filling in placeholders
 
@@ -27,7 +27,7 @@ Replace the files in `images/` with real photos **using the same filenames**, an
 | `hero-forest.jpg` | Home, top banner | Wide, 1920×1100+ |
 | `headshot.jpg` | Home intro (arched frame) and Contact form (small circle) | Portrait, 4:5 |
 | `headshot-2.jpg` | About page (top) | Portrait, 4:5 |
-| `headshot-3.jpg` | About page, "My approach" (Leah in her office) | 4:3 |
+| `headshot-3.jpg` | About page, "My approach" (Elisa in her office) | 4:3 |
 | `office-plants.jpg` | Home, "Three simple steps" | 4:3 |
 | `therapy-1.jpg` … `therapy-4.jpg` | Therapies page | Square |
 | `banner-ferns.jpg`, `banner-canopy.jpg`, `banner-path.jpg` | Banners on the Therapies, About and Contact pages | Wide |

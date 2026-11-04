@@ -795,3 +795,27 @@ h1, h2, h3, .price, .quote { font-variant-numeric: lining-nums; }
   .hero .container { padding-top: 40px; padding-bottom: 40px; }
 }
 @media (prefers-reduced-motion: reduce) { .mobile-bar { transition: none; } }
+
+/* ---------- v5: real content ---------- */
+.hero-note { font-size: 0.95rem !important; margin-top: 18px; color: var(--sage-light) !important; font-weight: 600; }
+.cta-band a:not(.btn), .page-banner a:not(.btn) { color: #fff; font-weight: 700; }
+.tags-center { justify-content: center; max-width: 760px; margin-left: auto !important; margin-right: auto !important; }
+.info-list strong.highlight { display: block; color: var(--plum); margin-top: 4px; }
+.endorsement {
+  margin: 0 0 24px;
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 28px 24px;
+  border-top: 4px solid var(--sage);
+}
+.endorsement blockquote {
+  margin: 0 0 14px;
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  line-height: 1.45;
+  font-style: italic;
+  color: var(--fig-leaf);
+}
+.endorsement figcaption { color: var(--ink-soft); font-size: 0.95rem; }
+.endorsement blockquote { font-variant-numeric: lining-nums; }
