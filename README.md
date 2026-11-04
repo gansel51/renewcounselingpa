@@ -8,10 +8,11 @@ A static website (plain HTML, CSS and a little JavaScript) for Renew Counseling.
 |---|---|
 | `index.html` | Home |
 | `therapies.html` | Focused Therapies |
-| `about.html` | About Me (bio, credentials, fees, Good Faith Estimate notice) |
-| `contact.html` | Hours, location, map and contact form |
+| `about.html` | About Me (bio, approach, credentials) |
+| `fees.html` | Fees & Insurance (rates, insurance, payment, cancellation policy, Good Faith Estimate notice) |
+| `contact.html` | Hours, location, office details (parking, accessibility), map and contact form |
 
-The header and footer are repeated in each page, so an address or phone number change needs to be made in all four files. Search for `[Street Address]`, `(000) 000-0000` and so on.
+The header, footer and phone-only Call/Book bar are repeated in each page, so an address or phone number change needs to be made in all five files. Search for `[Street Address]`, `(000) 000-0000` and so on.
 
 ## Filling in placeholders
 

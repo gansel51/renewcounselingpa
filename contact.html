@@ -28,6 +28,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="therapies.html">Focused Therapies</a></li>
           <li><a href="about.html">About Me</a></li>
+          <li><a href="fees.html">Fees &amp; Insurance</a></li>
           <li><a href="contact.html" aria-current="page">Contact</a></li>
           <li><a class="btn btn-primary" href="contact.html#contact-form">Book a Consultation</a></li>
         </ul>
@@ -55,6 +56,21 @@
               <div>
                 <strong>Office</strong>
                 [Street Address], [Suite]<br>[City], PA [ZIP]
+                <a class="directions" href="https://www.google.com/maps/search/?api=1&amp;query=[Street+Address]+[City]+PA" target="_blank" rel="noopener">Get directions →</a>
+              </div>
+            </li>
+            <li>
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M10 21v-6h4v6"/></svg></div>
+              <div>
+                <strong>Getting here</strong>
+                <!-- TODO: confirm office details -->
+                <ul class="office-details">
+                  <li><b>Parking:</b> <span class="tbd">[Free lot behind the building]</span></li>
+                  <li><b>Entrance:</b> <span class="tbd">[Suite 2, second floor; elevator available]</span></li>
+                  <li><b>Accessibility:</b> <span class="tbd">[Wheelchair accessible]</span></li>
+                  <li><b>Waiting room:</b> <span class="tbd">[Have a seat; I'll come get you at your appointment time]</span></li>
+                  <li><b>Online:</b> <span class="tbd">[Telehealth available for anyone in PA]</span></li>
+                </ul>
               </div>
             </li>
             <li>
@@ -150,14 +166,6 @@
       </div>
     </section>
 
-    <section class="section section-dark">
-      <div class="container">
-        <blockquote class="quote">
-          “The best time to plant a tree was twenty years ago. The second best time is now.”
-          <cite>Proverb</cite>
-        </blockquote>
-      </div>
-    </section>
   </main>
 
   <div class="crisis-bar" role="note">
@@ -179,6 +187,7 @@
             <li>[Street Address]</li>
             <li>[City], PA [ZIP]</li>
             <li><a href="contact.html">Hours &amp; directions</a></li>
+            <li><a href="fees.html">Fees &amp; insurance</a></li>
           </ul>
         </div>
         <div>
@@ -196,6 +205,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Mobile quick-action bar (phones only) -->
+  <div class="mobile-bar" aria-label="Quick actions">
+    <a href="tel:+10000000000" class="mobile-bar-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+    <a href="contact.html#contact-form" class="mobile-bar-book">Book a free consultation</a>
+  </div>
 
   <script src="js/main.js" defer></script>
 </body>
