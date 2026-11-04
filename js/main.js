@@ -106,7 +106,7 @@ if (form) {
       status.textContent = "Thank you! Your message has been sent. I'll be in touch soon.";
     } catch (err) {
       status.classList.add('error');
-      status.textContent = 'Sorry, something went wrong. Please try again, or call or email directly.';
+      status.textContent = 'Sorry, something went wrong. Please call (570) 734-7798 or email elisa@renewcounselingpa.com.';
     } finally {
       button.disabled = false;
       button.textContent = 'Send message';

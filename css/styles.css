@@ -905,3 +905,4 @@ h1, h2, h3, .price, .quote { font-variant-numeric: lining-nums; }
 @media (min-width: 1001px) and (max-width: 1279px) { .site-nav .nav-phone { display: none; } }
 /* Keep Elisa's face in frame when a portrait is cropped (arch, circle) */
 .portrait, .mini-profile img { object-position: center 30%; }
+a[href^="mailto:"] { overflow-wrap: anywhere; }
