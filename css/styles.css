@@ -821,3 +821,69 @@ h1, h2, h3, .price, .quote { font-variant-numeric: lining-nums; }
 .endorsement blockquote { font-variant-numeric: lining-nums; }
 .status-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: #7fd08a; margin-right: 8px; vertical-align: 1px; box-shadow: 0 0 0 3px rgba(127, 208, 138, 0.25); }
 .mini-profile .status-dot { background: #3f9a52; box-shadow: 0 0 0 3px rgba(63, 154, 82, 0.18); }
+
+/* ---------- v6: launch polish ---------- */
+/* Tags on tinted sections need a lighter fill to stand out */
+.section-tint .tags li { background: var(--paper); box-shadow: 0 1px 0 rgba(47, 74, 58, 0.08); }
+
+/* Phone number in the desktop header */
+.nav-phone a { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.nav-phone svg { width: 16px; height: 16px; color: var(--moss); }
+.site-nav .btn { white-space: nowrap; }
+.site-nav a { white-space: nowrap; }
+/* Mid-size screens: not enough room for the phone number in the header */
+@media (min-width: 1001px) and (max-width: 1279px) {
+  .nav-phone { display: none; }
+  .site-nav ul { gap: 22px; }
+}
+
+/* Trust row under the home banner */
+.trust-row { background: var(--paper); border-bottom: 1px solid var(--line); }
+.trust-row ul {
+  list-style: none;
+  margin: 0;
+  padding: 18px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 40px;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+.trust-row li { display: block; }
+.trust-row li + li::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 6px; height: 6px;
+  border-radius: 50% 0;
+  transform: rotate(45deg);
+  background: var(--sage);
+  margin: 0 17px 0 -23px;
+}
+.trust-row strong { color: var(--fig-leaf); }
+.trust-row a { color: inherit; text-decoration: none; }
+.trust-row a:hover strong { color: var(--plum); }
+@media (max-width: 860px) {
+  .trust-row ul { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; padding: 16px 0; font-size: 0.9rem; text-align: center; }
+  .trust-row li + li::before { display: none; }
+}
+
+/* Field-level form errors */
+.field-error { color: #a03636; font-size: 0.88rem; font-weight: 600; margin: 6px 0 0; }
+.field-error:empty { display: none; }
+.field input[aria-invalid="true"],
+.field textarea[aria-invalid="true"] { border-color: #a03636; background: #fff8f8; }
+
+/* Privacy page body text */
+.prose { max-width: 760px; }
+.prose h2 { margin-top: 1.4em; }
+.prose h2:first-child { margin-top: 0; }
+.prose h3 { font-size: 1.35rem; margin-top: 1.4em; }
+
+.footer-bottom a { color: inherit; }
+/* Header: a little wider than page content so the menu, phone and button fit */
+.header-inner.container { max-width: 1260px; }
+.brand { flex-shrink: 0; }
+@media (min-width: 1001px) { .site-nav ul { gap: 24px; } }
+@media (min-width: 1001px) { .site-nav li { display: flex; align-items: center; } .nav-phone a { line-height: 1; } }

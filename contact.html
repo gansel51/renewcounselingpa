@@ -8,6 +8,20 @@
   <title>Contact &amp; Location | Renew Counseling, Milford PA</title>
   <meta name="description" content="Contact Renew Counseling at 102 Wheatfield Drive, Suite B, Milford, PA 18337. Call (570) 734-7798 for a free 15-minute consultation.">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="images/favicon-48.png" sizes="48x48" type="image/png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="canonical" href="https://www.renewcounselingpa.com/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Renew Counseling">
+  <meta property="og:title" content="Contact &amp; Location | Renew Counseling, Milford PA">
+  <meta property="og:description" content="Contact Renew Counseling at 102 Wheatfield Drive, Suite B, Milford, PA 18337. Call (570) 734-7798 for a free 15-minute consultation.">
+  <meta property="og:url" content="https://www.renewcounselingpa.com/contact.html">
+  <meta property="og:image" content="https://www.renewcounselingpa.com/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Renew Counseling, Elisa D. Yost, MS, LPC, Milford PA">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -32,7 +46,8 @@
           <li><a href="about.html">About Me</a></li>
           <li><a href="fees.html">Fees &amp; Insurance</a></li>
           <li><a href="contact.html" aria-current="page">Contact</a></li>
-          <li><a class="btn btn-primary" href="contact.html#contact-form">Book a Consultation</a></li>
+          <li class="nav-phone"><a href="tel:+15707347798"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>(570) 734-7798</a></li>
+          <li><a class="btn btn-primary" href="contact.html#contact-form">Book a free consultation</a></li>
         </ul>
       </nav>
     </div>
@@ -130,26 +145,31 @@
             <div class="form-row">
               <div class="field">
                 <label for="first-name">First name <span class="req" aria-hidden="true">*</span></label>
-                <input id="first-name" name="first_name" type="text" autocomplete="given-name" required>
+                <input id="first-name" aria-describedby="first-name-error" name="first_name" type="text" autocomplete="given-name" required>
+                <p class="field-error" id="first-name-error"></p>
               </div>
               <div class="field">
                 <label for="last-name">Last name <span class="req" aria-hidden="true">*</span></label>
-                <input id="last-name" name="last_name" type="text" autocomplete="family-name" required>
+                <input id="last-name" aria-describedby="last-name-error" name="last_name" type="text" autocomplete="family-name" required>
+                <p class="field-error" id="last-name-error"></p>
               </div>
             </div>
             <div class="form-row">
               <div class="field">
                 <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
-                <input id="email" name="email" type="email" autocomplete="email" required>
+                <input id="email" aria-describedby="email-error" name="email" type="email" autocomplete="email" required>
+                <p class="field-error" id="email-error"></p>
               </div>
               <div class="field">
                 <label for="phone">Phone number</label>
-                <input id="phone" name="phone" type="tel" autocomplete="tel">
+                <input id="phone" aria-describedby="phone-error" name="phone" type="tel" autocomplete="tel">
+                <p class="field-error" id="phone-error"></p>
               </div>
             </div>
             <div class="field">
               <label for="message">Message <span class="req" aria-hidden="true">*</span></label>
-              <textarea id="message" name="message" required aria-describedby="message-hint"></textarea>
+              <textarea id="message" name="message" required aria-describedby="message-hint message-error"></textarea>
+              <p class="field-error" id="message-error"></p>
               <p class="hint" id="message-hint">If you would like to pay with insurance, please note your provider.</p>
             </div>
             <!-- Spam trap: hidden from people, bots fill it in -->
@@ -200,7 +220,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; <span data-year>2026</span> Elisa D Yost LLC. All rights reserved.</span>
+        <span>&copy; <span data-year>2026</span> Elisa D Yost LLC. All rights reserved. · <a href="privacy.html">Privacy</a> · <a href="privacy.html#npp">Notice of Privacy Practices</a></span>
         <span>Elisa D. Yost, MS, LPC · PA License #PC020602</span>
       </div>
     </div>

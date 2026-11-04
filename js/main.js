@@ -52,15 +52,37 @@ if (form) {
   const status = form.querySelector('.form-status');
   const button = form.querySelector('button[type="submit"]');
 
+  const messages = {
+    first_name: 'Please enter your first name.',
+    last_name: 'Please enter your last name.',
+    email: 'Please enter a valid email address, like name@example.com.',
+    phone: 'Please enter a valid phone number.',
+    message: 'Please enter a short message.',
+  };
+  const showError = (field) => {
+    const slot = document.getElementById(field.id + '-error');
+    const invalid = !field.validity.valid;
+    field.setAttribute('aria-invalid', String(invalid));
+    if (slot) slot.textContent = invalid ? messages[field.name] || 'Please check this field.' : '';
+    return invalid;
+  };
+  const fields = [...form.querySelectorAll('input:not([type="hidden"]):not([name="_gotcha"]), textarea')];
+  // Re-check a field as soon as the person fixes it
+  fields.forEach((field) => {
+    field.addEventListener('input', () => { if (field.getAttribute('aria-invalid') === 'true') showError(field); });
+    field.addEventListener('blur', () => { if (field.value) showError(field); });
+  });
+
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     status.className = 'form-status';
+    status.textContent = '';
 
-    if (!form.checkValidity()) {
-      const firstInvalid = form.querySelector(':invalid');
+    const invalid = fields.filter(showError);
+    if (invalid.length) {
       status.classList.add('error');
-      status.textContent = 'Please fill in your first name, last name, a valid email, and a message.';
-      if (firstInvalid) firstInvalid.focus();
+      status.textContent = invalid.length === 1 ? 'Please fix the highlighted field.' : `Please fix the ${invalid.length} highlighted fields.`;
+      invalid[0].focus();
       return;
     }
 

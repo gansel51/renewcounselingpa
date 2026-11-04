@@ -11,6 +11,8 @@ A static website (plain HTML, CSS and a little JavaScript) for Renew Counseling.
 | `about.html` | About Me (bio, approach, credentials) |
 | `fees.html` | Fees & Insurance (rates, insurance, payment, cancellation policy, Good Faith Estimate notice) |
 | `contact.html` | Hours, location, office details (parking, accessibility), map and contact form |
+| `privacy.html` | Website privacy policy and Notice of Privacy Practices (Elisa should review; add her NPP PDF) |
+| `404.html` | "Page not found" page (GitHub Pages shows it automatically) |
 
 The header, footer and phone-only Call/Book bar are repeated in each page, so an address or phone number change needs to be made in all five files. Search for `102 Wheatfield`, `(570) 734-7798` and so on.
 
@@ -36,6 +38,10 @@ Replace the files in `images/` with real photos **using the same filenames**, an
 
 Good free sources: [Unsplash](https://unsplash.com) and [Pexels](https://pexels.com). Resize large photos to roughly 2000px wide (or smaller) before adding them so pages load quickly.
 
+## Icons and link previews
+
+`images/favicon-32.png`, `favicon-48.png`, `apple-touch-icon.png` and `icon-512.png` are made from `logo.svg`. `images/og-image.jpg` (1200×630) is the preview image shown when someone shares a link by text or social media. Re-create these once the final logo is ready.
+
 ## Colors
 
 All colors are defined at the top of `css/styles.css` (`--fig-leaf`, `--sage`, `--plum`, and so on). Changing them there updates the whole site.
@@ -51,6 +57,10 @@ The free plan includes 50 submissions a month and spam filtering. **Note:** Form
 ## Google Map
 
 On Google Maps, search the office address, then choose **Share → Embed a map → Copy HTML**. Copy only the `src="…"` URL into the `<iframe>` in `contact.html`. No API key is needed.
+
+## Domain name
+
+The site assumes **https://www.renewcounselingpa.com/**. If the domain is different, find and replace that address in every `.html` file, `sitemap.xml` and `robots.txt`. When the domain is connected, GitHub creates a `CNAME` file automatically. Don't add one by hand before the DNS is set up, or the site will stop loading.
 
 ## Going live (GitHub Pages)
 
