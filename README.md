@@ -14,7 +14,7 @@ A static website (plain HTML, CSS and a little JavaScript) for Renew Counseling.
 | `privacy.html` | Website privacy policy and Notice of Privacy Practices (Elisa should review; add her NPP PDF) |
 | `404.html` | "Page not found" page (GitHub Pages shows it automatically) |
 
-The header, footer and phone-only Call/Book bar are repeated in each page, so an address or phone number change needs to be made in all five files. Search for `102 Wheatfield`, `(570) 734-7798` and so on.
+The header, footer and phone-only Call/Message bar are repeated in each page, so an address or phone number change needs to be made in all five files. Search for `102 Wheatfield`, `(570) 734-7798` and so on.
 
 ## Filling in placeholders
 

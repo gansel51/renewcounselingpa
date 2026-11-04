@@ -24,7 +24,7 @@ if (toggle && nav) {
   });
 }
 
-// Phone Call/Book bar: tuck it away while a page's own booking button or
+// Phone Call/Message bar: tuck it away while a page's own call/request buttons or
 // the contact form is on screen, and while someone is typing (keyboard open).
 const bar = document.querySelector('.mobile-bar');
 if (bar && 'IntersectionObserver' in window) {

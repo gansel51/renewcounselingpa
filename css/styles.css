@@ -887,3 +887,19 @@ h1, h2, h3, .price, .quote { font-variant-numeric: lining-nums; }
 .brand { flex-shrink: 0; }
 @media (min-width: 1001px) { .site-nav ul { gap: 24px; } }
 @media (min-width: 1001px) { .site-nav li { display: flex; align-items: center; } .nav-phone a { line-height: 1; } }
+
+/* Phones: calling is how clients schedule, so Call is the main button */
+@media (max-width: 860px) {
+  .mobile-bar-call { flex: 1; border: 0; background: var(--plum); color: #fff; }
+  .mobile-bar-call:hover { color: #fff; }
+  .mobile-bar-book { flex: 0 0 34%; background: transparent; border: 2px solid var(--fig-leaf); color: var(--fig-leaf); }
+  .mobile-bar-book:hover { color: var(--fig-leaf); }
+}
+@media (max-width: 380px) {
+  .mobile-bar-call { flex-basis: auto; }
+  .mobile-bar-book { flex: 0 0 38%; }
+}
+.schedule-note { margin: 0 0 14px; }
+.schedule-note a { font-weight: 700; }
+/* Must come after the desktop ".site-nav li" rule, which would otherwise un-hide it */
+@media (min-width: 1001px) and (max-width: 1279px) { .site-nav .nav-phone { display: none; } }
