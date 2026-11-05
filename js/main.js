@@ -88,8 +88,11 @@ if (form) {
       return;
     }
 
-    // Until a Formspree form ID is added, open the visitor's email app with the message filled in
+    // Until a Formspree form ID is added, offer ways to email the message instead. Many desktop
+    // browsers have no email app set up, so a mailto: link can silently do nothing; let the
+    // visitor pick their email service or copy the message.
     if (form.action.includes('YOUR_FORM_ID')) {
+      const to = 'elisa@renewcounselingpa.com';
       const v = (name) => (form.elements[name] ? form.elements[name].value.trim() : '');
       const subject = `Consultation request from ${v('first_name')} ${v('last_name')}`;
       const body = [
@@ -99,9 +102,44 @@ if (form) {
         '',
         v('message'),
       ].join('\n');
-      window.location.href = `mailto:elisa@renewcounselingpa.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const q = encodeURIComponent;
+      const options = [
+        ['Email app', `mailto:${to}?subject=${q(subject)}&body=${q(body)}`],
+        ['Gmail', `https://mail.google.com/mail/?view=cm&fs=1&to=${q(to)}&su=${q(subject)}&body=${q(body)}`],
+        ['Outlook', `https://outlook.live.com/mail/0/deeplink/compose?to=${q(to)}&subject=${q(subject)}&body=${q(body)}`],
+      ];
+
+      let choices = form.querySelector('.email-choices');
+      if (!choices) {
+        choices = document.createElement('div');
+        choices.className = 'email-choices';
+        status.after(choices);
+      }
+      choices.replaceChildren();
+      options.forEach(([label, href]) => {
+        const a = document.createElement('a');
+        a.className = 'btn btn-outline';
+        a.href = href;
+        a.textContent = label;
+        if (href.startsWith('http')) { a.target = '_blank'; a.rel = 'noopener'; }
+        choices.append(a);
+      });
+      const copy = document.createElement('button');
+      copy.type = 'button';
+      copy.className = 'btn btn-outline';
+      copy.textContent = 'Copy message';
+      copy.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(`To: ${to}\nSubject: ${subject}\n\n${body}`);
+          copy.textContent = 'Copied!';
+        } catch (err) {
+          copy.textContent = 'Copy failed';
+        }
+      });
+      choices.append(copy);
+
       status.classList.add('success');
-      status.textContent = 'Your email app should open with your message ready to send. If it doesn\'t, email elisa@renewcounselingpa.com or call (570) 734-7798.';
+      status.textContent = `Almost done: choose how to send your message to ${to}, or call (570) 734-7798.`;
       return;
     }
 

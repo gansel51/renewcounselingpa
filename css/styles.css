@@ -476,6 +476,8 @@ a:hover { color: var(--plum-dark); }
 .form-status { margin-top: 16px; font-weight: 600; }
 .form-status.success { color: var(--moss); }
 .form-status.error { color: #a03636; }
+.email-choices { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.email-choices .btn { padding: 0.55rem 1.1rem; }
 .hp-field { position: absolute; left: -9999px; }
 
 /* ---------- Notices ---------- */
