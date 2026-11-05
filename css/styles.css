@@ -2,6 +2,30 @@
    Renew Counseling — site styles
    Colors are defined once here; change them to re-theme the site.
    ========================================================= */
+/* Fonts are hosted on this site (fonts/), not loaded from Google, so visitors' browsers
+   make no requests to Google for them. Both are SIL Open Font License; see fonts/OFL-*.txt. */
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: swap;
+  src: url("../fonts/cormorant-garamond.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/cormorant-garamond-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/nunito-sans.woff2") format("woff2");
+}
+
 :root {
   --fig-leaf: #2f4a3a;      /* deep green: headings, header, footer */
   --fig-leaf-dark: #22372b;

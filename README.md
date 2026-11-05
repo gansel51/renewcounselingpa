@@ -97,6 +97,7 @@ To publish a change, commit it and push to `main`. GitHub Pages updates the live
 ├── js/
 │   └── main.js         Mobile menu, mobile call bar, footer year, contact form
 ├── images/             Photos, logo, icons, link-preview image
+├── fonts/              Site fonts (.woff2) and their licenses
 ├── sitemap.xml         Page list for search engines
 ├── robots.txt          Tells search engines they may crawl everything
 ├── .nojekyll           Tells GitHub Pages to serve files as-is (no Jekyll processing)
@@ -127,7 +128,7 @@ There are no templates, so these parts are **copied into every page**. A change 
 - **Crisis bar:** the 988 / 911 notice above the footer.
 - **Footer:** address, phone, email, license number, page links.
 - **Mobile Call/Message bar:** the sticky bar shown on phones.
-- **`<head>`:** fonts, icons, stylesheet and link-preview tags. Each page has its own title and description.
+- **`<head>`:** font preloads, icons, stylesheet and link-preview tags. Each page has its own title and description.
 
 The quickest way to make a site-wide change is your editor's "find in files" / "replace in files" (in VS Code: <kbd>Cmd/Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd>).
 
@@ -225,7 +226,7 @@ All styling is in `css/styles.css`.
 | `--plum` | `#6b3e5a` fig-fruit purple | Buttons and links |
 | `--ink` / `--ink-soft` | dark grey-greens | Body text |
 
-**Fonts:** headings use *Cormorant Garamond* and body text uses *Nunito Sans*, both loaded from Google Fonts in each page's `<head>`.
+**Fonts:** headings use *Cormorant Garamond* and body text uses *Nunito Sans*. Both are hosted on the site itself, in `fonts/`, and set up with `@font-face` at the top of `css/styles.css`, so visitors' browsers make no requests to Google for them. Both fonts are free under the SIL Open Font License, and the license files are in `fonts/`. To change fonts, add the new `.woff2` files to `fonts/`, update the `@font-face` rules and the `--font-serif` / `--font-sans` variables, and update the two `<link rel="preload">` lines in every page's `<head>`.
 
 **Layout:** `--max` (1120px) sets the content width. Card grids use `.card-grid` (fits as many columns as there's room for) or `.card-grid.four` (four columns, dropping to two, then one, on smaller screens).
 
@@ -302,7 +303,7 @@ The site is built to be usable with a keyboard and a screen reader. When editing
 
 ## Privacy and compliance notes
 
-- The site uses **no analytics, tracking or advertising cookies**. Third-party services are limited to Google Fonts, the Google Map embed and Formspree, and `privacy.html` lists them. If you add any other service (analytics, a booking widget, chat), update the privacy page.
+- The site uses **no analytics, tracking or advertising cookies**. Third-party services are limited to the Google Map embed and Formspree, and `privacy.html` lists them. The fonts are hosted on the site itself. If you add any other service (analytics, a booking widget, chat), update the privacy page.
 - **Good Faith Estimate:** under the No Surprises Act, self-pay clients have the right to an estimate of costs. `fees.html` includes the required notice. Keep it.
 - **Notice of Privacy Practices:** HIPAA requires a provider whose website describes its services to post its Notice of Privacy Practices prominently on that website. It's still a TODO (see above).
 - **License display:** the PA license number is shown in every page's footer, and both PA and NJ numbers are on the About page.
