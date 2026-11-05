@@ -35,6 +35,8 @@ Replace the files in `images/` with real photos **using the same filenames**, an
 | `cta-leaves.jpg` | "Get in touch" bands | Wide |
 | `logo.svg` | Header, footer, browser tab | Replace with the final fig tree logo |
 
+The current nature and room photos are free, public-domain (CC0) stock photos from Unsplash, downloaded via [Wikimedia Commons](https://commons.wikimedia.org). No photo credit is required. `headshot-3.jpg` is a stand-in plant photo until there's a real photo of Elisa in her office; update its `alt` text in `about.html` when it's replaced.
+
 Good free sources: [Unsplash](https://unsplash.com) and [Pexels](https://pexels.com). Resize large photos to roughly 2000px wide (or smaller) before adding them so pages load quickly.
 
 ## Icons and link previews
