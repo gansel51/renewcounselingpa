@@ -4,9 +4,11 @@
   <meta charset="utf-8">
   <script>document.documentElement.classList.remove('no-js');</script>
   <script>
-    // Serve correctly at any depth: on username.github.io/repo/ the root is /repo/, on a custom domain it is /
+    // This page can be shown at any broken address, so point its links and files at the site root.
+    // While the site lives in the /renewcounselingpa/ folder (e.g. griffinansel.com/renewcounselingpa/
+    // or gansel51.github.io/renewcounselingpa/) the root is that folder; on its own domain it is /.
     (function () {
-      var root = location.hostname.endsWith('github.io') ? '/' + location.pathname.split('/')[1] + '/' : '/';
+      var root = /^\/renewcounselingpa(\/|$)/.test(location.pathname) ? '/renewcounselingpa/' : '/';
       document.write('<base href="' + root + '">');
     })();
   </script>
