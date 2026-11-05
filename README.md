@@ -45,7 +45,7 @@ It's a plain static site: HTML pages, one stylesheet and one small JavaScript fi
 
 ### Content Elisa needs to provide or confirm
 
-- [ ] **Cancellation policy** (`fees.html`): fill in the notice period (placeholder: "[24 hours']") and the late-cancellation fee (placeholder: "[the full fee]").
+- [x] **Cancellation policy** (`fees.html`): $50 fee for cancellations within 24 hours of the appointment.
 - [ ] **Notice of Privacy Practices** (`privacy.html`): add her NPP as a PDF (for example `docs/notice-of-privacy-practices.pdf`) and link it where the placeholder is.
 - [ ] **Privacy page review** (`privacy.html`): Elisa should review the whole page and set the "Last updated" date. It's a plain-language starting point, not legal advice.
 - [ ] **Photo of Elisa in her office** (`images/headshot-3.jpg`, About page): it's currently a stock photo of plants. When it's replaced, update its `alt` text in `about.html`.
@@ -57,7 +57,7 @@ It's a plain static site: HTML pages, one stylesheet and one small JavaScript fi
 - [ ] Register the domain (see above), connect it to GitHub Pages and turn on HTTPS. See [Hosting and deploying](#hosting-and-deploying-github-pages).
 - [ ] If the domain ends up being something other than `www.renewcounselingpa.com`, replace that address everywhere (see [Domain name](#domain-name)).
 - [ ] After launch, submit `sitemap.xml` in [Google Search Console](https://search.google.com/search-console). Also create or claim a Google Business Profile for the office so it appears on Google Maps.
-- [ ] Add the website link to Elisa's Psychology Today profile.
+- [ ] Update Elisa's Psychology Today profile: add the website link, and change the payment methods to match the site ("Card" instead of "Visa").
 - [ ] Run through the [testing checklist](#testing-checklist) on the live domain.
 
 ---
@@ -173,7 +173,7 @@ The site speaks in Elisa's voice, in the first person ("I", "my"). Bio wording, 
 Text that still needs real content is wrapped like this:
 
 ```html
-<span class="tbd">[24 hours']</span>
+<span class="tbd">[date]</span>
 ```
 
 On the site it shows with a **yellow highlight** (the `.tbd` style in `css/styles.css`) so it's easy to spot. To find every one, search the project for `class="tbd"`, and search for `TODO` to find notes left in the HTML. When real content goes in, remove the `<span class="tbd">` wrapper and the square brackets.
